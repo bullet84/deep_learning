@@ -10,3 +10,14 @@ gh pr view PR_NUMBER --json commits
 gh pr diff PR_NUMBER
 gh pr merge PR_NUMBER --squash --delete-branch
 ```
+
+## 병합 후 확인
+
+```powershell
+git switch main
+git pull --ff-only
+git log --oneline -5
+```
+
+PR의 두 커밋이 main에서는 새로운 커밋 하나로 정리되는지 확인하세요.
+저장소에서 squash merge를 허용해야 사용할 수 있습니다.
