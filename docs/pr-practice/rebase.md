@@ -10,3 +10,15 @@ gh pr view PR_NUMBER --json commits
 gh pr diff PR_NUMBER
 gh pr merge PR_NUMBER --rebase --delete-branch
 ```
+
+## 병합 후 확인
+
+```powershell
+git switch main
+git pull --ff-only
+git log --oneline --graph -10
+```
+
+두 커밋이 유지되면서 선형 이력으로 이어지는지 확인하세요.
+GitHub에서 rebase merge한 커밋에는 새로운 SHA가 부여됩니다.
+저장소에서 rebase merge를 허용해야 사용할 수 있습니다.
